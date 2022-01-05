@@ -1,0 +1,45 @@
+<h2>Inventory Ordering</h2>
+
+<div>
+  <h3>Stock Items</h3>
+  <div class="row gridHeaderRow">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-3">
+      <span>Product</span>
+    </div>
+    <div class="col-md-1">
+      <span>Price</span>
+    </div>
+    <div class="col-md-1">
+      <span>Available</span>
+    </div>
+    <div class="col-md-2">
+      <span>Reorder Level</span>
+    </div>
+    <div class="col-md-2">
+      <span>Reorder Qty</span>
+    </div>
+  </div>
+  <div class="row gridRow" [ngClass]="{lowStock: item.available <= item.reorderQty}" *ngFor='let item of items'>
+    <div class="col-md-3">
+      <button class="btn btn-primary" (click)="issuePO(item)">Issue PO</button>
+    </div>
+    <div class="col-md-3">
+      <span>{{item.productName}}</span>
+    </div>
+    <div class="col-md-1">
+      <span>{{item.price | currency}}</span>
+    </div>
+    <div class="col-md-1">
+      <span>{{item.available}}</span>
+    </div>
+    <div class="col-md-2">
+      <span>{{item.reorderQty}}</span>
+    </div>
+    <div class="col-md-2">
+      <span>{{item.restockQty}}</span>
+    </div>
+  </div>
+
+</div>

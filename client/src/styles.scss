@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+.gridHeaderRow{
+  font-weight: bold;
+  margin: 6px;
+  padding: 4px;
+}
+
+.gridRow{
+  border-top: 1px solid rgb(190, 190, 190) !important;
+  border-bottom: 1px solid rgb(190, 190, 190) !important;
+  margin: 6px;
+  padding: 4px;
+}
+
+.gridRow span {
+  vertical-align: middle;
+  line-height: 40px;
+}

@@ -1,0 +1,36 @@
+<h2>The Market Place</h2>
+
+<div>
+    <h3>Available Items</h3>
+    <h6>Current Shoppers: {{shoppers}}</h6>
+    <div class="row gridHeaderRow">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-3">
+        <span>Product</span>
+      </div>
+      <div class="col-md-3">
+        <span>Price</span>
+      </div>
+      <div class="col-md-3">
+        <span>Available</span>
+      </div>
+    </div>
+    <div class="row gridRow" *ngFor='let item of items'>
+        <div class="col-md-3">
+            <button class="btn btn-primary"
+                [disabled] = 'item.available <= 0'
+                (click)="purchaseItem(item)">{{ item.available > 0 ? "Purchase" : "Sold out"}}</button>
+        </div>
+        <div class="col-md-3">
+            <span>{{item.productName}}</span>
+        </div>
+        <div class="col-md-3">
+            <span>{{item.price | currency}}</span>
+        </div>
+        <div class="col-md-3">
+            <span>{{item.available}}</span>
+        </div>
+    </div>
+
+</div>
